@@ -53,3 +53,21 @@
 // nums = [1, 2, 3, 4, 5];
 
 // console.log(arraySorted(nums));
+
+// 4.Reverse an Array
+
+const reverseArray = (nums)=>{
+    if(!nums || nums.length === 0) return 
+ 
+    let reverseArraNums = [];
+
+    for(let i = nums.length - 1 ; i >=0 ; i--){
+        reverseArraNums.push(nums[i])
+    }
+    return reverseArraNums;
+
+}
+nums = [1, 2, 3, 4, 5]
+
+
+console.log(reverseArray(nums))
