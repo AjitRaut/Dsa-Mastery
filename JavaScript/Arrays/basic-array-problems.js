@@ -56,18 +56,43 @@
 
 // 4.Reverse an Array
 
-const reverseArray = (nums)=>{
-    if(!nums || nums.length === 0) return 
- 
-    let reverseArraNums = [];
+// const reverseArray = (nums)=>{
+//     if(!nums || nums.length === 0) return
 
-    for(let i = nums.length - 1 ; i >=0 ; i--){
-        reverseArraNums.push(nums[i])
+//     let reverseArraNums = [];
+
+//     for(let i = nums.length - 1 ; i >=0 ; i--){
+//         reverseArraNums.push(nums[i])
+//     }
+//     return reverseArraNums;
+
+// }
+// nums = [1, 2, 3, 4, 5]
+
+// console.log(reverseArray(nums))
+
+// 5. Find the Frequency of Each Element in the Array
+
+const eachFrequency = (nums) => {
+  if (!Array.isArray(nums) || nums.length == 0) return;
+
+  let arrayFrequency = [];
+  let counted = [];
+
+  for (let i = 0; i < nums.length; i++) {
+    if (!counted.includes(nums[i])) {
+      let frequencyCount = 1;
+      for (let j = i + 1; j < nums.length; j++) {
+        if (nums[i] === nums[j]) {
+          frequencyCount++;
+        }
+      }
+      arrayFrequency.push({ num: nums[i], count: frequencyCount });
+      counted.push(nums[i]);
     }
-    return reverseArraNums;
+  }
+  return arrayFrequency;
+};
+nums = [1, 2, 2, 3, 1, 4];
 
-}
-nums = [1, 2, 3, 4, 5]
-
-
-console.log(reverseArray(nums))
+console.log(eachFrequency(nums));
