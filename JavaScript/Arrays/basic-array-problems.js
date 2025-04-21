@@ -73,26 +73,48 @@
 
 // 5. Find the Frequency of Each Element in the Array
 
-const eachFrequency = (nums) => {
-  if (!Array.isArray(nums) || nums.length == 0) return;
+// const eachFrequency = (nums) => {
+//   if (!Array.isArray(nums) || nums.length == 0) return;
 
-  let arrayFrequency = [];
-  let counted = [];
+//   let arrayFrequency = [];
+//   let counted = [];
 
-  for (let i = 0; i < nums.length; i++) {
-    if (!counted.includes(nums[i])) {
-      let frequencyCount = 1;
-      for (let j = i + 1; j < nums.length; j++) {
-        if (nums[i] === nums[j]) {
-          frequencyCount++;
-        }
-      }
-      arrayFrequency.push({ num: nums[i], count: frequencyCount });
-      counted.push(nums[i]);
+//   for (let i = 0; i < nums.length; i++) {
+//     if (!counted.includes(nums[i])) {
+//       let frequencyCount = 1;
+//       for (let j = i + 1; j < nums.length; j++) {
+//         if (nums[i] === nums[j]) {
+//           frequencyCount++;
+//         }
+//       }
+//       arrayFrequency.push({ num: nums[i], count: frequencyCount });
+//       counted.push(nums[i]);
+//     }
+//   }
+//   return arrayFrequency;
+// };
+// nums = [1, 2, 2, 3, 1, 4];
+
+// console.log(eachFrequency(nums));
+
+// 6. Count even and odd numbers in an array
+
+const countEvenOdd = (nums)=>{
+  if(!Array.isArray(nums) && nums.length=== 0) return;
+
+  let sumCount = 0;
+    let OddCount = 0
+
+  for(let i=1 ;i<nums.length;i++){
+    
+    if(nums[i] % 2 === 0){
+      sumCount ++
+    }else{
+      OddCount++
     }
   }
-  return arrayFrequency;
-};
-nums = [1, 2, 2, 3, 1, 4];
+return `OddCount is ${OddCount} , SumCount Is ${sumCount}`
+}
+const nums = [1,2,3,4,5,6,7,8,9];
 
-console.log(eachFrequency(nums));
+console.log(countEvenOdd(nums))
