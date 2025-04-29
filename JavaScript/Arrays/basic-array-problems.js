@@ -99,22 +99,42 @@
 
 // 6. Count even and odd numbers in an array
 
-const countEvenOdd = (nums)=>{
-  if(!Array.isArray(nums) && nums.length=== 0) return;
+// const countEvenOdd = (nums)=>{
+//   if(!Array.isArray(nums) && nums.length=== 0) return;
 
-  let sumCount = 0;
-    let OddCount = 0
+//   let sumCount = 0;
+//     let OddCount = 0
 
-  for(let i=1 ;i<nums.length;i++){
-    
-    if(nums[i] % 2 === 0){
-      sumCount ++
-    }else{
-      OddCount++
-    }
+//   for(let i=1 ;i<nums.length;i++){
+
+//     if(nums[i] % 2 === 0){
+//       sumCount ++
+//     }else{
+//       OddCount++
+//     }
+//   }
+// return `OddCount is ${OddCount} , SumCount Is ${sumCount}`
+// }
+// const nums = [1,2,3,4,5,6,7,8,9];
+
+// console.log(countEvenOdd(nums))
+
+// 7 .Given an array of integers, return the sum of all the even numbers in the array.
+
+const SumOfEvenNums = (nums) => {
+  if (!Array.isArray(nums) && !nums) return;
+
+  let sumEvenNum = 0;
+
+  for (let i = 1; i < nums.length; i++) {
+  
+    if (nums[i] % 2 === 0) {
+      sumEvenNum += nums[i];
+    } 
   }
-return `OddCount is ${OddCount} , SumCount Is ${sumCount}`
-}
-const nums = [1,2,3,4,5,6,7,8,9];
+  return sumEvenNum;
+};
 
-console.log(countEvenOdd(nums))
+let nums = [1, 2, 3, 4, 5, 6 ,8];
+
+console.log(SumOfEvenNums(nums));
